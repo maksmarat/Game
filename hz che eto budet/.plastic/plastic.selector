@@ -1,0 +1,4 @@
+repository "HzCheEtoBudet@maksmarat@cloud"
+  path "/"
+    br "/main"
+    co "/main"
