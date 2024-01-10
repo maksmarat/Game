@@ -59,10 +59,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
     private Vector3 previousPosition;
 
-    
-    private void FixedUpdate()
+    private void Start()
     {
 
+    }
+    private void FixedUpdate()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         if (PlayerPrefs.HasKey("mouseX_rotationSpeed")) rotationSpeed = PlayerPrefs.GetFloat("mouseX_rotationSpeed", 0f);
         if (PlayerPrefs.HasKey("mouse_inversion")) inversion = PlayerPrefs.GetInt("mouse_inversion", 0);
 

@@ -11,12 +11,14 @@ public class PlayerRotation : MonoBehaviour
     void Start()
     {
         Camera.main.orthographicSize = Screen.height / 2f;
+
     }
 
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
         if (PlayerPrefs.HasKey("mouseY_rotationSpeed")) rotationSpeed = PlayerPrefs.GetFloat("mouseY_rotationSpeed", 0f);
         if (PlayerPrefs.HasKey("mouse_inversion")) inversion = PlayerPrefs.GetInt("mouse_inversion", 0);
     }
