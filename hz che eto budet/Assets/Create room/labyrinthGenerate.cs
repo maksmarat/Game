@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class labyrinthGenerate : MonoBehaviour
 {
-    public int mazeSize = 5;          // Размер лабиринта (количество комнат в одной строке)
-    public int roomSize = 5;          // Размер комнаты
+    [Header("Maze Settings")]
+    public int mazeSize = 5;          // Размер лабиринта
+    public float roomSize = 5;          // Размер комнаты
     public int passageSize = 2;       // Размер прохода
+
+    [Header("Objects")]
     public Transform player;
     public GameObject roomPrefab;
     public GameObject[] wall;
     public GameObject[] floor;
-    private int[,] maze;              // Двумерный массив для представления лабиринта
+
+    private int[,] maze;
 
     void Start()
     {
-        // player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         player.transform.position = new Vector3(mazeSize * roomSize / 2, 3.04f, mazeSize * roomSize / 2);
-        //player.GetComponent<CharacterController>().enabled = true;
+        player.GetComponent<CharacterController>().enabled = true;
 
         GenerateMaze();
     }
@@ -33,8 +37,8 @@ public class labyrinthGenerate : MonoBehaviour
         for (int i = 0; i < mazeSize; i++) 
         { 
             int c = Random.Range(0, 4);
-            if (mazeSizex < 1 || mazeSizex - 1 > mazeSize) break;
-            if (mazeSizez < 1 || mazeSizez - 1 > mazeSize) break;
+            if (mazeSizex < 1 || mazeSizex + 2 > mazeSize) break;
+            if (mazeSizez < 1 || mazeSizez + 2 > mazeSize) break;
             if (c == 0)
             {
                 mazeSizex++;
@@ -51,6 +55,8 @@ public class labyrinthGenerate : MonoBehaviour
             {
                 mazeSizez++;
             }
+            Debug.Log(mazeSizex);
+            Debug.Log(mazeSizez);
             maze[mazeSizex, mazeSizez] = 1;
         }
 
@@ -61,6 +67,7 @@ public class labyrinthGenerate : MonoBehaviour
                 if (maze[x, z] == 1)
                 {
                     Vector3 position = new Vector3(x * roomSize, 0, z * roomSize);
+                    
                     if (x > 0 && maze[x - 1, z] == 1)
                     {
                         wall[0].SetActive(false);
@@ -84,7 +91,10 @@ public class labyrinthGenerate : MonoBehaviour
                         wall[3].SetActive(false);
                         floor[3].SetActive(true);
                     }
+
                     Instantiate(roomPrefab, position, Quaternion.identity);
+
+
                     for (int i = 0; i < 4;i++)
                     {
                         wall[i].SetActive(true);

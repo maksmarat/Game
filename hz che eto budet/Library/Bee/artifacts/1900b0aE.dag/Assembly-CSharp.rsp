@@ -366,9 +366,17 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Scenes/labyrinthGenerate.cs"
-"Assets/Scenes/Main character/PlayerMovement.cs"
-"Assets/Scenes/Main character/PlayerRotation.cs"
+"Assets/Create room/labyrinthGenerate.cs"
+"Assets/Create room/RoomObjectsGenerate.cs"
+"Assets/Power/PowerLines.cs"
+"Assets/rotation logic/LodGroupadd.cs"
+"Assets/rotation logic/RotateLogicColor.cs"
+"Assets/scripts/ConveyorMove.cs"
+"Assets/scripts/Interactable.cs"
+"Assets/scripts/InteractableObject.cs"
+"Assets/scripts/Main character/my script/PlayerMovement.cs"
+"Assets/scripts/Main character/my script/PlayerRotation.cs"
+"Assets/scripts/Main character/ObjectPlacement.cs"
 -langversion:9.0
 
 /deterministic

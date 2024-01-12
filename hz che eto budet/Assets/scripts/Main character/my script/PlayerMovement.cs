@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
         // Á‡ÏÂ‰ÎÂÌËÂ ‚ÂÏÂÌË
         if (Input.GetKeyDown(KeyCode.F) && energy—harge > sprintCd)
         {
-            timeStop = !timeStop;
+            //timeStop = !timeStop;
         }
 
         if (timeStop && energy—harge > sprintCd)
@@ -263,7 +263,7 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         bonus_speed += 40f;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(1f);
         boostCd = !boostCd;
     }
     IEnumerator noEnergy—harge()

@@ -16,6 +16,10 @@ TagManager:
   - wall
   - jumpPoint
   - energyAdd
+  - door
+  - logicRotate
+  - logicRotateEnergy
+  - PowerLines
   layers:
   - Default
   - TransparentFX
@@ -26,7 +30,7 @@ TagManager:
   - Ground
   - SlipperyWall
   - Boost
-  - 
+  - InteractableMask
   - 
   - 
   - 
