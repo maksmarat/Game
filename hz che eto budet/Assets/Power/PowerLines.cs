@@ -7,6 +7,12 @@ public class PowerLines : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<GK.PowerBox>().CalculateBoundingBox();
+
+    }
+
+    private void FixedUpdate()
+    {
         GameObject closestObject = FindClosestObjectWithTag("PowerLines");
 
         if (closestObject != null)
@@ -19,7 +25,7 @@ public class PowerLines : MonoBehaviour
     {
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(tag);
         GameObject closestObject = null;
-        float closestDistance = float.MaxValue;
+        float closestDistance = 100;
 
         foreach (GameObject obj in objectsWithTag)
         {
@@ -51,5 +57,7 @@ public class PowerLines : MonoBehaviour
         // Установка точек начала и конца линии
         lineRenderer.SetPosition(0, start);
         lineRenderer.SetPosition(1, end);
+
+        Destroy(this);
     }
 }

@@ -19,9 +19,9 @@ public class ObjectPlacement : MonoBehaviour
     public float installationAccuracy = 2.5f;
     // Задаем интервал времени для обновления предпросмотра
     public float updateInterval = 1.0f;
+    
     private float timer = 0.0f;
-
-
+    private bool placement = false;
 
     void Update()
     {
@@ -116,6 +116,7 @@ public class ObjectPlacement : MonoBehaviour
             {
                 if (previewObject != null)
                 {
+                    placement = true;
                     float roundedX = Mathf.Round(hit.point.x / installationAccuracy) * installationAccuracy;
                     float roundedY = hit.point.y + prefabToPlace[prefabNumber].transform.localScale.y / 2;
                     float roundedZ = Mathf.Round(hit.point.z / installationAccuracy) * installationAccuracy;
@@ -130,13 +131,13 @@ public class ObjectPlacement : MonoBehaviour
     {
         if (prefabToPlace != null)
         {
-            if (previewObject != null)
+            if (previewObject != null && placement)
             {
                 // Устанавливаем объект на позицию предпросмотра
                 prefabToPlace[prefabNumber].SetActive(true);
                 Instantiate(prefabToPlace[prefabNumber], previewObject.transform.position, previewObject.transform.rotation);
                 prefabToPlace[prefabNumber].SetActive(false);
-
+                placement = false;
                 // Выключаем предпросмотр и чистим его
                 isPreviewMode = false;
                 ClearPreview();

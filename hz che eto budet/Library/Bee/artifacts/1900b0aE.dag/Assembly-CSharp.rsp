@@ -368,7 +368,11 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.16f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Create room/labyrinthGenerate.cs"
 "Assets/Create room/RoomObjectsGenerate.cs"
+"Assets/Materials/SetMaterialTransparent.cs"
 "Assets/Power/PowerLines.cs"
+"Assets/PowerLineBoundingBox.cs"
+"Assets/Quickhull/ConvexHullCalculator.cs"
+"Assets/Quickhull/Example/ConvexHullTest.cs"
 "Assets/rotation logic/LodGroupadd.cs"
 "Assets/rotation logic/RotateLogicColor.cs"
 "Assets/scripts/ConveyorMove.cs"
@@ -377,6 +381,7 @@
 "Assets/scripts/Main character/my script/PlayerMovement.cs"
 "Assets/scripts/Main character/my script/PlayerRotation.cs"
 "Assets/scripts/Main character/ObjectPlacement.cs"
+"Assets/scripts/PowerBox.cs"
 -langversion:9.0
 
 /deterministic

@@ -63,7 +63,12 @@
     <Compile Include="Assets\scripts\Main character\ObjectPlacement.cs" />
     <Compile Include="Assets\Power\PowerLines.cs" />
     <Compile Include="Assets\Create room\RoomObjectsGenerate.cs" />
+    <Compile Include="Assets\Quickhull\Example\ConvexHullTest.cs" />
+    <Compile Include="Assets\Materials\SetMaterialTransparent.cs" />
     <Compile Include="Assets\Create room\labyrinthGenerate.cs" />
+    <Compile Include="Assets\PowerLineBoundingBox.cs" />
+    <Compile Include="Assets\scripts\PowerBox.cs" />
+    <Compile Include="Assets\Quickhull\ConvexHullCalculator.cs" />
     <Compile Include="Assets\scripts\Main character\my script\PlayerRotation.cs" />
     <Compile Include="Assets\scripts\Interactable.cs" />
     <Compile Include="Assets\scripts\ConveyorMove.cs" />
@@ -71,6 +76,10 @@
     <Compile Include="Assets\scripts\InteractableObject.cs" />
     <Compile Include="Assets\scripts\Main character\my script\PlayerMovement.cs" />
     <Compile Include="Assets\rotation logic\RotateLogicColor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Materials\field.shader" />
+    <None Include="Assets\Materials\field2.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
